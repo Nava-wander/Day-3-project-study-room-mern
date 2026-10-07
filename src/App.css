@@ -1,0 +1,88 @@
+/* =========================================
+   STUDYSPACE — GLOBAL MOTION
+   ========================================= */
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.45s ease-out both;
+}
+
+.float-soft {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+.pulse-soft {
+  animation: pulseSoft 2.2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   FOCUS STATES
+   ========================================= */
+
+:focus-visible {
+  outline: 3px solid #ffc857;
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   IMAGE / MEDIA DEFAULTS
+   ========================================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
